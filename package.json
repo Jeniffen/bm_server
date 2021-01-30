@@ -9,9 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix client",
-    "storybook": "npm run storybook --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\" \"npm run storybook\""
+    "dev": "concurrently \"npm run server\""
   },
   "author": "",
   "license": "ISC",
