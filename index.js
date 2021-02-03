@@ -1,11 +1,10 @@
-const express = require("express");
-const cookieSession = require("cookie-session");
-const passport = require("passport");
-const keys = require("./config/keys");
-const authRoutes = require("./routes/authRoutes");
-
-require("./services/mongoose");
-require("./services/passport");
+import express from "express";
+import cookieSession from "cookie-session";
+import passport from "passport";
+import keys from "./config/keys.js";
+import authRoutes from "./routes/authRoutes.js";
+import "./services/mongoose.js";
+import "./services/passport.js";
 
 const app = express();
 

@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
-const keys = require("../config/keys");
+import mongoose from "mongoose";
+import keys from "../config/keys.js";
 
-require("../models/User");
+import "../models/User.js";
 
 mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true,
