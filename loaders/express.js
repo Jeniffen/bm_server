@@ -1,6 +1,4 @@
-import express from "express";
-
-export default ({ app }) => {
+export default async ({ app }) => {
   app.get("/status", (req, res) => {
     res.status(200).end();
   });

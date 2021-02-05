@@ -6,11 +6,10 @@
     "node": "12.14.0",
     "npm": "6.13.4"
   },
-  "type": "module",
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "dev": "concurrently \"npm run server\""
+    "dev": "nodemon --exec babel-node index.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +24,11 @@
     "passport-google-oauth20": "^2.0.0",
     "stable": "^0.1.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.12.13",
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.13",
+    "@babel/preset-env": "^7.12.13"
+  },
   "description": ""
 }

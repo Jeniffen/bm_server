@@ -1,7 +1,7 @@
 import passport from "passport";
 import { Strategy as GoogleStrategy } from "passport-google-oauth20";
 import mongoose from "mongoose";
-import keys from "../../config/keys.js";
+import keys from "../../config/keys";
 
 const User = mongoose.model("users");
 
