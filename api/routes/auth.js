@@ -1,9 +1,12 @@
 import { Router } from "express";
 import passport from "passport";
+import passportMiddleware from "../middlewares/passport";
 
 const route = Router();
 
 export default (app) => {
+  const middleware = passportMiddleware();
+
   app.use("/auth", route);
 
   route.get(

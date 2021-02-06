@@ -1,4 +1,5 @@
 import express from "express";
+import config from "./config";
 import loaders from "./loaders";
 
 const startServer = async () => {
@@ -6,8 +7,7 @@ const startServer = async () => {
 
   await loaders({ app });
 
-  const PORT = 5000;
-  app.listen(PORT);
+  app.listen(config.port);
 };
 
 startServer();
