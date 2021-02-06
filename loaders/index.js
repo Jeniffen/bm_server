@@ -2,11 +2,9 @@ import expressLoader from "./express.js";
 import mongooseLoader from "./mongoose.js";
 import cookieSessionLoader from "./cookieSession";
 import passportLoader from "./passport";
+import "../api/middlewares/passport";
 
 export default async ({ app }) => {
-  await expressLoader({ app });
-  console.log("Express Intialized");
-
   await mongooseLoader();
   console.log("MongoDB Initialized");
 
@@ -15,4 +13,7 @@ export default async ({ app }) => {
 
   await passportLoader({ app });
   console.log("passport Initialized");
+
+  await expressLoader({ app });
+  console.log("Express Intialized");
 };

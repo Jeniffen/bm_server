@@ -1,3 +1,6 @@
+import routes from "../api";
+import config from "../config";
+
 export default async ({ app }) => {
   app.get("/status", (req, res) => {
     res.status(200).end();
@@ -7,5 +10,5 @@ export default async ({ app }) => {
   });
   app.enable("trust proxy");
 
-  return app;
+  app.use(config.api.prefix, routes());
 };
