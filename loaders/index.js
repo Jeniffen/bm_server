@@ -1,9 +1,11 @@
 import mongooseLoader from "./mongoose.js";
-import cookieSessionLoader from "./cookieSession";
+import sessionLoader from "./session";
 import passportLoader from "./passport";
+import corsLoader from "./cors";
+import socketLoader from "./socket";
 import expressLoader from "./express.js";
 
-export default async ({ app }) => {
+export default async ({ app, server }) => {
   await mongooseLoader();
   console.log("MongoDB Initialized");
 
@@ -11,12 +13,19 @@ export default async ({ app }) => {
     name: "userModel",
     model: require("../models/User"),
   };
-  await cookieSessionLoader({ app });
-  console.log("cookieSession Initialized");
+
+  await socketLoader({ app, server });
+  console.log("socket Initialized");
+
+  await sessionLoader({ app });
+  console.log("session Initialized");
 
   await passportLoader({ app });
   console.log("passport Initialized");
 
-  await expressLoader({ app });
-  console.log("Express Intialized");
+  await corsLoader({ app });
+  console.log("cors Initialized");
+
+  await await expressLoader({ app });
+  console.log("express Intialized");
 };
