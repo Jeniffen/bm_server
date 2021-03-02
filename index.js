@@ -1,7 +1,7 @@
-import express from "express";
-import http from "http";
-import config from "./config";
-import loaders from "./loaders";
+import express from 'express';
+import http from 'http';
+import config from './config';
+import loaders from './loaders';
 
 const startServer = async () => {
   const app = express();
@@ -9,7 +9,9 @@ const startServer = async () => {
 
   await loaders({ app, server });
 
-  server.listen(config.port);
+  server.listen(config.port, () => {
+    console.log(`Server running on port ${config.port}`);
+  });
 };
 
 startServer();
