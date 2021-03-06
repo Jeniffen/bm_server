@@ -1,7 +1,13 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
-  googleId: String,
+  givenName: String,
+  familyName: String,
+  authProvider: {
+    provider: String,
+    providerId: String,
+  },
+  picture: String,
 });
 
-mongoose.model("users", userSchema);
+mongoose.model('users', userSchema);
