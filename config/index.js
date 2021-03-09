@@ -29,4 +29,6 @@ export default {
       callbackURL: googleURL,
     },
   },
+
+  SESSION_SECRET: keys.SESSION_SECRET,
 };

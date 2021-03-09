@@ -29,4 +29,9 @@ export default (app) => {
   route.get('/current_user', (req, res) => {
     res.send(req.user);
   });
+
+  route.get('/logout', (req, res) => {
+    req.logout();
+    res.send(req.user);
+  });
 };

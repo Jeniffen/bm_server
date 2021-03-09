@@ -1,11 +1,11 @@
-import session from "express-session";
+import cookieSession from 'cookie-session';
+import config from '../config';
 
 export default async ({ app }) => {
   app.use(
-    session({
-      secret: "KeyboardKittens",
-      resave: true,
-      saveUninitialized: true,
+    cookieSession({
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+      keys: [config.SESSION_SECRET],
     })
   );
 };
