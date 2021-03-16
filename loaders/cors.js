@@ -1,9 +1,11 @@
-import cors from "cors";
+import cors from 'cors';
 
 export default async ({ app }) => {
   app.use(
     cors({
-      origin: "https://localhost:3000",
+      origin: 'http://localhost:3000',
+      methods: ['GET', 'POST'],
+      credentials: true,
     })
   );
 };
